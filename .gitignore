@@ -1,0 +1,19 @@
+# R specific
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Output directories
+_Output/
+Rdata/
+
+# Large data files
+*.csv
+*.xlsx
+*.rds
+
+# OS specific
+.DS_Store
+Thumbs.db

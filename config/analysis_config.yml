@@ -1,0 +1,51 @@
+# LernIRT Analysis Configuration
+
+# Item fit thresholds
+item_fit:
+  infit:
+    lower: 0.8
+    upper: 1.2
+  outfit:
+    lower: 0.8
+    upper: 1.2
+  discr_min: 0.2
+  correct_pct_min: 5
+  diff_max: 5
+
+# Subject configurations
+subjects:
+  math:
+    - "MAT7"
+    - "MAT8"
+    - "MAT9"
+  english:
+    - "ENG7"
+    - "ENG8"
+    - "ENG9"
+
+# Competency areas
+competency_areas:
+  MAT:
+    - "ZV"
+    - "GFDZ"
+    - "FR"
+  ENG:
+    - "LES"
+    - "HOE"
+    - "SIF"
+
+# Output configuration
+output:
+  base_path: "_Output"
+  date_format: "%Y%m%d"
+
+# Model configuration
+model:
+  tam:
+    control:
+      increment.factor: 1.05
+      fac.oldxsi: 0.8
+      Msteps: 10
+      maxiter: 1000
+  mirt:
+    method: "QMCEM"
