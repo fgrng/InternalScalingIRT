@@ -182,7 +182,7 @@ run_1dim_analysis <- function(key) {
     # Create date prefix
     date_prefix <- format(Sys.Date(), "%Y%m%d")
     # Create absolute output path
-    output_path <- file.path(output_dir, paste0(date_prefix, "_ICC_", key, ".pdf"))
+    output_path <- file.path(output_dirs$base, paste0(date_prefix, "_ICC_", key, ".pdf"))
 
     # Create ICC PDF
     tryCatch({

@@ -8,6 +8,7 @@
 # Output directories
 _Output/
 Rdata/
+logs/
 
 # Large data files
 *.csv

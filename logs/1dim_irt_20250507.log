@@ -14,3 +14,15 @@ ERROR in analysis for MAT9: Objekt 'output_dir' nicht gefunden
 
 Analysis for ENG7 started at 08:41:58
 Output directories created at _Output/20250507_FinalNormMitAnkerGesamt_1dim_ENG7
+ERROR in analysis for ENG7: Objekt 'output_dir' nicht gefunden
+
+Analysis for ENG8 started at 08:43:34
+Output directories created at _Output/20250507_FinalNormMitAnkerGesamt_1dim_ENG8
+ERROR in analysis for ENG8: Objekt 'output_dir' nicht gefunden
+
+Analysis for ENG9 started at 08:45:06
+Output directories created at _Output/20250507_FinalNormMitAnkerGesamt_1dim_ENG9
+ERROR in analysis for ENG9: Objekt 'output_dir' nicht gefunden
+
+All one-dimensional analyses completed at 2025-05-07 08:46:28
+Successful: 0 of 6
