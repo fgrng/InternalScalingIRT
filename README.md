@@ -2,6 +2,8 @@
 
 An integrated R environment for IRT analysis used in specific projects by the author (standardized workflows for educational assessment data, combining TAM and mirt packages with data processing and reporting).
 
+This is a refactoring of old R scripts to avoid the ongoing tinkering with years old madness.
+
 ## Project Structure
 
 - `R/`: Core functions and utilities

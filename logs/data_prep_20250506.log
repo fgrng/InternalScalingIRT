@@ -1,0 +1,40 @@
+Starting data preparation at 2025-05-06 16:34:06
+
+Processing data for MAT7 started at 16:34:06
+Loaded data: 5564 persons, 521 items, 94 anchors
+Prepared responses: 383 columns
+Prepared MIRT structure with 4 dimensions
+Data for MAT7 processed and saved to Rdata/prepared/prepared_data_MAT7.rds
+
+Processing data for MAT8 started at 16:34:09
+Loaded data: 6504 persons, 539 items, 106 anchors
+Prepared responses: 396 columns
+Prepared MIRT structure with 3 dimensions
+Data for MAT8 processed and saved to Rdata/prepared/prepared_data_MAT8.rds
+
+Processing data for MAT9 started at 16:34:10
+Loaded data: 6237 persons, 542 items, 102 anchors
+Prepared responses: 408 columns
+Prepared MIRT structure with 3 dimensions
+Data for MAT9 processed and saved to Rdata/prepared/prepared_data_MAT9.rds
+
+Processing data for ENG7 started at 16:34:11
+Loaded data: 5654 persons, 539 items, 104 anchors
+Prepared responses: 416 columns
+Prepared MIRT structure with 3 dimensions
+Data for ENG7 processed and saved to Rdata/prepared/prepared_data_ENG7.rds
+
+Processing data for ENG8 started at 16:34:13
+Loaded data: 6470 persons, 540 items, 106 anchors
+Prepared responses: 400 columns
+Prepared MIRT structure with 3 dimensions
+Data for ENG8 processed and saved to Rdata/prepared/prepared_data_ENG8.rds
+
+Processing data for ENG9 started at 16:34:14
+Loaded data: 5796 persons, 541 items, 100 anchors
+Prepared responses: 402 columns
+Prepared MIRT structure with 3 dimensions
+Data for ENG9 processed and saved to Rdata/prepared/prepared_data_ENG9.rds
+
+All data preparation completed at 2025-05-06 16:34:15
+Successful: 6 of 6

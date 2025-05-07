@@ -16,7 +16,7 @@
 create_output_dirs <- function(prefix, key, date = format(Sys.Date(), "%Y%m%d")) {
   # Create base path with date and key
   output_path_base <- file.path("_Output", paste0(date, "_", prefix, "_", key))
-  
+
   # Define subdirectories
   subdirs <- c("WLE", "Table", "Plots", "Model")
   if (grepl("MultiDim", prefix)) {
@@ -26,10 +26,10 @@ create_output_dirs <- function(prefix, key, date = format(Sys.Date(), "%Y%m%d"))
     # Add one-dimensional model specific directories
     subdirs <- c(subdirs, "Verteilung", "ICC", "DIF")
   }
-  
+
   # Create base directory
   dir.create(output_path_base, showWarnings = FALSE, recursive = TRUE)
-  
+
   # Create all subdirectories
   paths <- list(base = output_path_base)
   for (subdir in subdirs) {
@@ -37,7 +37,7 @@ create_output_dirs <- function(prefix, key, date = format(Sys.Date(), "%Y%m%d"))
     dir.create(path, showWarnings = FALSE)
     paths[[subdir]] <- path
   }
-  
+
   return(paths)
 }
 
@@ -66,7 +66,7 @@ write_table_standard <- function(data, filepath, row_names = FALSE) {
 #' @export
 `%notin%` <- Negate(`%in%`)
 
-#' Clean up R environment
+#' Clean up R environment, preserving functions
 #'
 #' @param keep Character vector of variable names to keep
 #' @param run_gc Whether to run garbage collection
@@ -74,17 +74,24 @@ write_table_standard <- function(data, filepath, row_names = FALSE) {
 clean_environment <- function(keep = NULL, run_gc = TRUE) {
   # Get all objects in global environment
   all_objs <- ls(envir = .GlobalEnv)
-  
-  # Filter objects to remove
+
+  # Determine which objects are not functions
+  non_function_objs <- all_objs[sapply(all_objs, function(obj_name) {
+    !is.function(get(obj_name, envir = .GlobalEnv))
+  })]
+
+  # Filter objects to remove (exclude functions and kept objects)
   if (!is.null(keep)) {
-    to_remove <- all_objs[all_objs %notin% keep]
+    to_remove <- non_function_objs[non_function_objs %notin% keep]
   } else {
-    to_remove <- all_objs
+    to_remove <- non_function_objs
   }
-  
-  # Remove objects
-  rm(list = to_remove, envir = .GlobalEnv)
-  
+
+  # Remove non-function objects
+  if (length(to_remove) > 0) {
+    rm(list = to_remove, envir = .GlobalEnv)
+  }
+
   # Run garbage collection if requested
   if (run_gc) {
     gc()
@@ -103,14 +110,14 @@ clean_environment <- function(keep = NULL, run_gc = TRUE) {
 #' @export
 check_item_quality <- function(infit, outfit, discrimination, correct_pct, difficulty, config) {
   # Check all quality criteria
-  meets_criteria <- 
-    (infit >= config$infit$lower) & 
+  meets_criteria <-
+    (infit >= config$infit$lower) &
     (infit <= config$infit$upper) &
-    (outfit >= config$outfit$lower) & 
+    (outfit >= config$outfit$lower) &
     (outfit <= config$outfit$upper) &
     (discrimination >= config$discr_min) &
     (correct_pct >= config$correct_pct_min) &
     (difficulty <= config$diff_max)
-  
+
   return(meets_criteria)
 }
